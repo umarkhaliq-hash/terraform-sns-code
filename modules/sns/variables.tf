@@ -2,6 +2,6 @@ variable "topic_name" {
   type = string
 }
 
-variable "lambda_function_arn" {
+variable "slack_webhook_url" {
   type = string
 }

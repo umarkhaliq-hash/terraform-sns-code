@@ -3,8 +3,8 @@ resource "aws_sns_topic" "this" {
   kms_master_key_id = "alias/aws/sns"
 }
 
-resource "aws_sns_topic_subscription" "lambda" {
+resource "aws_sns_topic_subscription" "slack" {
   topic_arn = aws_sns_topic.this.arn
-  protocol  = "lambda"
-  endpoint  = var.lambda_function_arn
+  protocol  = "https"
+  endpoint  = var.slack_webhook_url
 }
